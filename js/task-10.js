@@ -15,21 +15,20 @@ function createBoxes(amount) {
   `;
 
   for (let i = 0; i < amount; i++) {
-    const createBox = `<div style="height: ${boxSize}px; width: ${boxSize}px; background-color: ${getRandomHexColor()}; display: flex; justify-content: center; align-items: center">${
-      i + 1
-    }
+    const createBox = `<div style="height: ${boxSize}px; width: ${boxSize}px; background-color: ${getRandomHexColor()}; display: flex; justify-content: center; align-items: center">${boxNum}
     </div>`;
 
     boxesMarkup += createBox;
 
     boxSize += 10;
+    boxNum++;
   }
-  containerForBoxesEl.innerHTML = boxesMarkup;
+  containerForBoxesEl.innerHTML += boxesMarkup;
 }
 
 function destroyBoxes() {
-  const removeBoxes = document.querySelectorAll("#boxes div");
-  removeBoxes.forEach((box) => box.remove());
+  containerForBoxesEl.innerHTML = "";
+  boxNum = 1;
 }
 
 const createBtn = document.querySelector("[data-create]");
@@ -37,6 +36,8 @@ const destroyBtn = document.querySelector("[data-destroy]");
 
 const containerForBoxesEl = document.querySelector("#boxes");
 const inputNumberOfBoxes = document.querySelector("#controls input");
+
+let boxNum = 1;
 
 createBtn.addEventListener("click", () => {
   const numberOfBoxes = inputNumberOfBoxes.value;

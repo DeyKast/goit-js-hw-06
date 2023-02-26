@@ -10,7 +10,7 @@ decrementBtn.addEventListener("click", () => {
   valueEl.textContent = counterValue;
 });
 
-incrementBtn.addEventListener("mousedown", () => {
+incrementBtn.addEventListener("click", () => {
   counterValue += 1;
   console.log(counterValue);
   valueEl.textContent = counterValue;

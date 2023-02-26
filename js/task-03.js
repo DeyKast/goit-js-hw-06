@@ -25,4 +25,4 @@ const imagesMarkup = images.map((image) => createElement(image)).join("");
 listEl.insertAdjacentHTML("afterbegin", imagesMarkup);
 
 listEl.style.cssText =
-  "display: flex; gap: 50px; list-style: none; flex-wrap: wrap";
+  "display: flex; gap: 20px; list-style: none; flex-wrap: wrap";

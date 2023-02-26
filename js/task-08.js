@@ -1,5 +1,5 @@
 const formEl = document.querySelector(".login-form");
-let User = {};
+let user = {};
 
 formEl.addEventListener("submit", formSubmit);
 
@@ -13,12 +13,12 @@ function formSubmit(event) {
   if (email.value === "" || password.value === "") {
     alert("Всі поля повинні бути заповнені !");
   } else {
-    User = {
+    user = {
       email: email.value,
       password: password.value,
     };
     event.currentTarget.reset();
-    console.log(User);
+    console.log(user);
     alert("Ласкаво просимо !");
   }
 }
